@@ -3,7 +3,7 @@ package appDomain;
 import utilities.Iterator;
 
 /**
- * @author Marc Edison Estaca
+ * @author Marc Edison Estaca, Robert Macklin
  * 
  * This is a interface for a QueueADT implementation. It stores values in the form a queue.
  * When a element is added to the Queue, it is placed at the back. Values are then pulled from the front.

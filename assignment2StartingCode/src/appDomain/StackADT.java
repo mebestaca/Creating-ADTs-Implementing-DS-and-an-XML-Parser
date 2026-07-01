@@ -3,7 +3,7 @@ package appDomain;
 import utilities.Iterator;
 
 /**
- * @author Marc Edison Estaca
+ * @author Marc Edison Estaca, Robert Macklin
  * 
  * This interface is for a StackADT implementation. It stores elements in the form of a stack.
  * When a element is added to the Stack, it is placed at the top. Values are then pulled from the top.
