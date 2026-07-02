@@ -3,25 +3,23 @@ package appDomain;
 import utilities.Iterator;
 
 /**
- * @author Marc Edison Estaca, Robert Macklin
+ * @author Marc Edison Estaca, Robert Macklin, Reiner Justin Realica
  * 
- * This is a interface for a QueueADT implementation. It stores values in the form a queue.
- * When a element is added to the Queue, it is placed at the back. Values are then pulled from the front.
+ * A queue abstract data type (ADT) that stores elements in first-in, first-out (FIFO) order.
  * 
- * This will use MyDLL as the underlying data structure.
+ * <p>Elements are added to the rear of the queue and removed from the front of the queue.</p>
  * 
- * When initialized, the Queue will have a set max size.
+ * <p>When initialized, the Queue will have a set max size.</p>
  * 
- * @param <E> - This is a placeholder for the data type to be used.
+ * @param <E> the type of elements stored in the queue
  */
 public interface QueueADT<E> {
 
     /**
-     * This function will assume that the MyDLL used as the underlying data structure exists.
      * 
-     * This function will take a element and add it to the end of the queue.
+     * This function will take an element and add it to the end of the queue.
      * 
-     * @param element - The element to be added to the queue.
+     * @param element the element to be added to the queue.
      */
     void enqueue(E element);
 
@@ -30,16 +28,16 @@ public interface QueueADT<E> {
      * 
      * This function will remove the first element from the queue before returning it.
      * 
-     * @return - Returns the element that was taken from the front of the queue.
+     * @return the element that was taken from the front of the queue.
      */
     E dequeue();
 
     /**
-     * This will assume that there is more that zero elements in the Queue.
+     * This will assume that there is more than zero elements in the Queue.
      * 
-     * This function checks the element at the front of the Queue and returns it.
+     * This function returns the element at the front of the Queue without removing it
      * 
-     * @return - Returns the element at the front of the Queue.
+     * @return the element at the front of the Queue.
      */
     E peek();
 
@@ -54,75 +52,75 @@ public interface QueueADT<E> {
      * This function will take in a element and then iterate through the Queue to see if it is contained within.
      * When it finds a match, it returns true. If it makes it to the end without finding the value, it returns false.
      * 
-     * @param element - The element to be checked against the Queue.
+     * @param element the element to be checked against the Queue.
      * @return - Returns either true if the Queue contains the test element. False if it does not.
      */
     boolean contains(E element);
 
     /**
-     * This function will first compare the values of isEmpty(), isFull(), and then size(). If all of these match, it will then iterate through the Queues.
-     * If at any point the values don't match, it returns false. If all of these checks pass, it returns true.
+     * <p>For equality, this function will first compare the values of isEmpty(), isFull(), and then size(). 
+     * If all of these match, it will then iterate through the Queues.
+     * If at any point the values don't match, it returns false. If all of these checks pass, it returns true.</p>
      * 
-     * @param that - The Queue to be compared too.
-     * @return - Returns true if this Queue and the compared Queue are the same. Returns false otherwise.
+     * @param that the Queue to compare with
+     * @return true if this Queue and the compared Queue are the same. Returns false otherwise.
      */
     boolean equals(QueueADT<E> that);
 
     /**
-     * This function will return true if the Queue is empty. If not, it returns false.
+     * Determines whether the queue contains no elements
      * 
-     * @return - Returns true if the Queue has no values in it. False otherwise.
+     * @return true if the Queue has no values in it. False otherwise.
      */
     boolean isEmpty();
 
     /**
-     * This function will check if the size of the Queue is greater than or equal to the max size. If it is, it returns true. If not, it returns false.
+     * Determines whether the Queue has reached its maximum capacity.
      * 
-     * @return - Returns true if the size of the Queue matches the max size. Returns false otherwise.
+     * @return true if the size of the Queue matches the max size. Returns false otherwise.
      */
     boolean isFull();
 
     /**
-     * This function will return the size of the Queue.
+     * This function will return the number of elements currently stored in the Queue.
      * 
-     * @return - Returns the size of the Queue.
+     * @return the number of elements in the Queue
      */
     int size();
 
     /**
      * This will assume that the element given is not null.
      * 
-     * This function will take in a element and then iterate through the Queue to see if it is contained within.
-     * When it finds a match, it returns the position of the element. If it makes it to the end without finding the value, it returns -1.
+     * <p>This function will take in an element and then iterate through the Queue to see if it is contained within.
+     * When it finds a match, it returns the position of the element. If it makes it to the end without finding the value, it returns -1.</p>
      * 
-     * @param element - The element to be checked against the Queue.
-     * @return - Returns the position of the value in the Queue. If it doesn't exist, it returns -1.
+     * @param element the element to search for
+     * @return the position of the value in the Queue. If it doesn't exist, it returns -1.
      */
     int search(E element);
 
     /**
      * This will assume that the Queue has more than zero elements in it.
      * 
-     * This function will create a Object Array the same length as this Queue before iterating through the Queue and copying them to the Array.
-     * It then will return the Array.
+     * <p>This function will create a Object Array the same length as this Queue before iterating through the Queue and copying them to the Array.
+     * It then will return the Array.</p>
      * 
-     * @return - Returns a Object Array of the values in the Queue.
+     * @return an Object Array containing all the values of the Queue.
      */
     Object[] toArray();
 
     /**
-     * This function will create a Array the same length as this Queue before iterating through the Queue and copying them to the Array.
-     * It then will return the Array. If the given Array is too small to hold the Queue, it will create one that can fit it.
+     * <p>If the provided array is not large enough to hold all elements, a new array of the same runtime type is created and returned.</p>
      * 
-     * @param array - A pre-existing array for the Queue to be copied into.
-     * @return - Returns the Queue in the form of a array.
+     * @param array the array into which the queue elements are copied
+     * @return an array containing the elements of the queue
      */
     E[] toArray(E[] array);
 
     /**
      * This sets up the Iterator for the Queue by passing it to the underlying data structure.
      * 
-     * @return - Returns the iterator for this Queue.
+     * @return the iterator for this Queue.
      */
     Iterator<E> iterator();
 }
