@@ -5,7 +5,7 @@ import utilities.Iterator;
 /**
  * @author Marc Edison Estaca, Robert Macklin, Reiner Justin Realica
  *
- * A stack abstract data type (ADT) that stores elements in last-in, first-out LIFO order.
+ * A stack abstract data type (ADT) that stores elements in last-in, first-out (LIFO) order.
  * 
  * <p>It stores elements in the form of a stack. 
  * When a element is added to the Stack, it is placed at the top. 
