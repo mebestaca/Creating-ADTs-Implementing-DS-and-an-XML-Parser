@@ -3,16 +3,19 @@ package appDomain;
 import utilities.Iterator;
 
 /**
- * @author Marc Edison Estaca, Robert Macklin
+ * @author Marc Edison Estaca, Robert Macklin, Reiner Justin Realica
+ *
+ * A stack abstract data type (ADT) that stores elements in last-in, first-out LIFO order.
  * 
- * This interface is for a StackADT implementation. It stores elements in the form of a stack.
- * When a element is added to the Stack, it is placed at the top. Values are then pulled from the top.
+ * <p>It stores elements in the form of a stack. 
+ * When a element is added to the Stack, it is placed at the top. 
+ * Values are then pulled from the top.</p>
  * 
- * This will use MyArrayList as the underlying data structure.
+ * <p>This will use MyArrayList as the underlying data structure.</p>
  * 
- * When initialized, the Stack will have a set max size.
+ * <p>When initialized, the Stack will have a set max size.</p>
  * 
- * @param <E> - This is a placeholder for the data type to be used.
+ * @param <E> the type of elements stored in the stack
  */
 public interface StackADT<E> {
 
@@ -21,30 +24,30 @@ public interface StackADT<E> {
      * 
      * This function will take in a given element and add it to the top of the Stack.
      * 
-     * @param element - The element to be added to the Stack.
+     * @param element the element to be added to the Stack.
      */
     void push(E element);
 
     /**
      * This will assume that the Stack has at least one element in it.
      * 
-     * This function will store the value of the topmost element in the Stack before removing it. It will then return the stored valued.
+     * Removes and returns the element at the top of the stack
      * 
-     * @return - Returns the value of the element that was at the top of the Stack.
+     * @return the element removed from the top of the stack
      */
     E pop();
 
     /**
      * This will assume that the Stack has at least one element in it.
      * 
-     * This function will get the value of the topmost element before returning it.
+     * Returns the element at the top of the stack without removing it.
      * 
-     * @return - Returns the value of the element that is at the top of the Stack.
+     * @return the value of the element that is at the top of the Stack.
      */
     E peek();
 
     /**
-     * This function will remove all elements of the Stack.
+     * This function will remove all elements from the Stack.
      */
     void clear();
 
@@ -54,17 +57,17 @@ public interface StackADT<E> {
      * This function will take in a element and then iterate through the Stack to see if it is contained within.
      * When it finds a match, it returns true. If it makes it to the end without finding the value, it returns false.
      * 
-     * @param element - The element to be checked against the Stack.
-     * @return - Returns either true if the Stack contains the test element. False if it does not.
+     * @param element the element to search for
+     * @return either true if the Stack contains the test element, false if it does not.
      */
     boolean contains(E element);
 
     /**
-     * This function will first compare the values of isEmpty(), isFull(), and then size(). If all of these match, it will then iterate through the Stacks.
+     * For equality, this function will first compare the values of isEmpty(), isFull(), and then size(). If all of these match, it will then iterate through the Stacks.
      * If at any point the values don't match, it returns false. If all of these checks pass, it returns true.
      * 
-     * @param that - The Stack to be compared too.
-     * @return - Returns true if this Queue and the compared Stack are the same. Returns false otherwise.
+     * @param that the stack to compare with 
+     * @return true if this Queue and the compared Stack are the same. Returns false otherwise.
      */
     boolean equals(StackADT<E> that);
 
@@ -76,53 +79,54 @@ public interface StackADT<E> {
     boolean isEmpty();
 
     /**
-     * This function will return the size of the Stack.
+     * This function will return the number of elements currently stored in the Stack.
      * 
-     * @return - Returns the size of the Stack.
+     * @return the number of elements in the Stack.
      */
     int size();
 
     /**
      * This will assume that the element given is not null.
      * 
-     * This function will take in a element and then iterate through the Stack to see if it is contained within.
-     * When it finds a match, it returns the position of the element. If it makes it to the end without finding the value, it returns -1.
+     * <p>This function will take in a element and then iterate through the Stack to see if it is contained within.
+     * When it finds a match, it returns the position of the element. If it makes it to the end without finding the value, it returns -1.</p>
      * 
-     * @param element - The element to be checked against the Stack.
-     * @return - Returns the position of the value in the Stack. If it doesn't exist, it returns -1.
+     * @param element the element to search for
+     * @return the position of the value in the Stack. If it doesn't exist, it returns -1.
      */
     int search(E element);
 
     /**
-     * This function will check if the size of the Stack is equal too or greater than the max size of the Stack. If not, it returns false.
+     * This function will check if the size of the Stack has reached or exceeded its maximum capacity. If not, it returns false.
      * 
-     * @return - Returns true if the size of the Stack is equal too or greater than the max size of the Stack. Returns false otherwise.
+     * @return true if the size of the Stack has reached its maximum capacity. Returns false otherwise.
      */
-    boolean stackOverflow();
+    boolean isFull();
 
     /**
      * This will assume that the Stack has more than zero elements in it.
      * 
-     * This function will create a Object Array the same length as this Stack before iterating through the Stack and copying them to the Array.
-     * It then will return the Array.
+     * <p>This function will create a Object Array the same length as this Stack before iterating through the Stack and copying them to the Array.
+     * It then will return the Array.</p>
      * 
-     * @return - Returns a Object Array of the values in the Stack.
+     * @return an Object Array containing the elements of the Stack.
      */
     Object[] toArray();
 
     /**
-     * This function will create a Array the same length as this Stack before iterating through the it and copying them to the Array.
-     * It then will return the Array. If the given Array is too small to hold the Stack, it will create one that can fit it.
-     * 
-     * @param array - A pre-existing array for the Stack to be copied into.
-     * @return - Returns the Stack in the form of a array.
+     * Returns an array containing all elements in the stack in stack order.
+     *
+     *<p>If the provided array is not large enough to hold all elements, a new array of the same runtime type is created and returned.</p>
+     *
+     * @param array the array into which the stack elements are copied
+     * @return an array containing the elements of the stack
      */
     E[] toArray(E[] array);
 
     /**
      * This sets up the Iterator for the Stack by passing it to the underlying data structure.
      * 
-     * @return - Returns the iterator for this Queue.
+     * @return an iterator for this Stack
      */
     Iterator<E> iterator();
 }
