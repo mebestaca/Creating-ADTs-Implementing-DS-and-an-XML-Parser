@@ -101,7 +101,7 @@ public interface StackADT<E> {
      * 
      * @return true if the size of the Stack has reached its maximum capacity. Returns false otherwise.
      */
-    boolean isFull();
+    boolean stackOverflow();
 
     /**
      * This will assume that the Stack has more than zero elements in it.
