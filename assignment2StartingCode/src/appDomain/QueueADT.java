@@ -1,5 +1,6 @@
 package appDomain;
 
+import exceptions.EmptyQueueException;
 import utilities.Iterator;
 
 /**
@@ -21,7 +22,7 @@ public interface QueueADT<E> {
      * 
      * @param element the element to be added to the queue.
      */
-    void enqueue(E element);
+	public void enqueue( E toAdd ) throws NullPointerException;
 
     /**
      * This will assume that the Queue has more than zero elements in the Queue.
@@ -30,7 +31,7 @@ public interface QueueADT<E> {
      * 
      * @return the element that was taken from the front of the queue.
      */
-    E dequeue();
+    public E dequeue() throws EmptyQueueException;
 
     /**
      * This will assume that there is more than zero elements in the Queue.
@@ -39,23 +40,26 @@ public interface QueueADT<E> {
      * 
      * @return the element at the front of the Queue.
      */
-    E peek();
+    public E peek() throws EmptyQueueException;
 
     /**
      * This function will go through and remove each element of the Queue until it is empty.
      */
-    void dequeueAll();
+    public void dequeueAll();
 
     /**
-     * This will assume that the element given is not null.
-     * 
-     * This function will take in a element and then iterate through the Queue to see if it is contained within.
-     * When it finds a match, it returns true. If it makes it to the end without finding the value, it returns false.
-     * 
-     * @param element the element to be checked against the Queue.
-     * @return - Returns either true if the Queue contains the test element. False if it does not.
-     */
-    boolean contains(E element);
+	 * Returns true if this list contains the specified element. More formally,
+	 * returns true if and only if this list contains at least one element e
+	 * such that (o==null ? e==null : o.equals(e)).
+	 * 
+	 * @param toFind
+	 *            element whose presence in this list is to be tested.
+	 * @return true if this list contains the specified element.
+	 * @throws NullPointerException
+	 *             if the specified element is null and this list does not
+	 *             support null elements.
+	 */
+    public boolean contains( E toFind ) throws NullPointerException;
 
     /**
      * <p>For equality, this function will first compare the values of isEmpty(), isFull(), and then size(). 
@@ -65,7 +69,7 @@ public interface QueueADT<E> {
      * @param that the Queue to compare with
      * @return true if this Queue and the compared Queue are the same. Returns false otherwise.
      */
-    boolean equals(QueueADT<E> that);
+    public boolean equals( QueueADT<E> that );
 
     /**
      * Determines whether the queue contains no elements
@@ -79,14 +83,14 @@ public interface QueueADT<E> {
      * 
      * @return true if the size of the Queue matches the max size. Returns false otherwise.
      */
-    boolean isFull();
+    public boolean isFull();
 
     /**
      * This function will return the number of elements currently stored in the Queue.
      * 
      * @return the number of elements in the Queue
      */
-    int size();
+    public int size();
 
     /**
      * This will assume that the element given is not null.
@@ -97,7 +101,7 @@ public interface QueueADT<E> {
      * @param element the element to search for
      * @return the position of the value in the Queue. If it doesn't exist, it returns -1.
      */
-    int search(E element);
+    public int search( E toFind );
 
     /**
      * This will assume that the Queue has more than zero elements in it.
@@ -107,7 +111,7 @@ public interface QueueADT<E> {
      * 
      * @return an Object Array containing all the values of the Queue.
      */
-    Object[] toArray();
+    public Object[] toArray();
 
     /**
      * <p>If the provided array is not large enough to hold all elements, a new array of the same runtime type is created and returned.</p>
@@ -115,12 +119,14 @@ public interface QueueADT<E> {
      * @param array the array into which the queue elements are copied
      * @return an array containing the elements of the queue
      */
-    E[] toArray(E[] array);
+    public E[] toArray( E[] holder ) throws NullPointerException;
 
     /**
      * This sets up the Iterator for the Queue by passing it to the underlying data structure.
      * 
      * @return the iterator for this Queue.
      */
-    Iterator<E> iterator();
+    public Iterator<E> iterator();
+    
+    
 }
