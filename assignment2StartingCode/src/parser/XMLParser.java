@@ -138,6 +138,11 @@ public class XMLParser {
 
     private void processTag(String tag, int lineNumber) {
 
+    	// Ignore XML declaration
+        if(tag.startsWith("<?xml")) {
+            return;
+        }
+    	
 
         if(!validTag(tag)) {
 
