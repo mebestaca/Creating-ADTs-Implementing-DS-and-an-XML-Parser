@@ -1,8 +1,6 @@
-package appDomain;
+package utilities;
 
 import java.util.EmptyStackException;
-
-import utilities.Iterator;
 
 /**
  * @author Marc Edison Estaca, Robert Macklin, Reiner Justin Realica

@@ -3,8 +3,8 @@ package implementations;
 import java.util.EmptyStackException;
 import java.util.NoSuchElementException;
 
-import appDomain.StackADT;
 import utilities.Iterator;
+import utilities.StackADT;
 
 @SuppressWarnings("unchecked")
 public class MyStack<E> implements StackADT<E> {

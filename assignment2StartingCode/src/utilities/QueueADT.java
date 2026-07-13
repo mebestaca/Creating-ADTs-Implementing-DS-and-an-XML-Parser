@@ -1,7 +1,6 @@
-package appDomain;
+package utilities;
 
 import exceptions.EmptyQueueException;
-import utilities.Iterator;
 
 /**
  * @author Marc Edison Estaca, Robert Macklin, Reiner Justin Realica

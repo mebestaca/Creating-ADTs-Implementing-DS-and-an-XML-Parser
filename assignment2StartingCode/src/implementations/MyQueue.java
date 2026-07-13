@@ -1,7 +1,7 @@
 package implementations;
 
-import appDomain.QueueADT;
 import utilities.Iterator;
+import utilities.QueueADT;
 import exceptions.EmptyQueueException;
 
 public class MyQueue<E> implements QueueADT<E> {
