@@ -1,5 +1,7 @@
 package appDomain;
 
+import parser.XMLParser;
+
 public class AppDriver {
 	public static void main( String[] args )
 	{
@@ -9,6 +11,6 @@ public class AppDriver {
 	        return;
 	    }
 		
-		
+		new XMLParser(args[0]);
 	}
 }
