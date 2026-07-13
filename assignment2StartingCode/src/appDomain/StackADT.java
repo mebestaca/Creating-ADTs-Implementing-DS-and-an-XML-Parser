@@ -1,5 +1,7 @@
 package appDomain;
 
+import java.util.EmptyStackException;
+
 import utilities.Iterator;
 
 /**
@@ -26,7 +28,7 @@ public interface StackADT<E> {
      * 
      * @param element the element to be added to the Stack.
      */
-    void push(E element);
+	public void push( E toAdd ) throws NullPointerException;
 
     /**
      * This will assume that the Stack has at least one element in it.
@@ -35,7 +37,7 @@ public interface StackADT<E> {
      * 
      * @return the element removed from the top of the stack
      */
-    E pop();
+    public E pop() throws EmptyStackException;
 
     /**
      * This will assume that the Stack has at least one element in it.
@@ -44,12 +46,12 @@ public interface StackADT<E> {
      * 
      * @return the value of the element that is at the top of the Stack.
      */
-    E peek();
+    public E peek() throws EmptyStackException;
 
     /**
      * This function will remove all elements from the Stack.
      */
-    void clear();
+    public void clear();
 
     /**
      * This will assume that the element given is not null.
@@ -60,7 +62,7 @@ public interface StackADT<E> {
      * @param element the element to search for
      * @return either true if the Stack contains the test element, false if it does not.
      */
-    boolean contains(E element);
+    public boolean contains( E toFind ) throws NullPointerException;
 
     /**
      * For equality, this function will first compare the values of isEmpty(), isFull(), and then size(). If all of these match, it will then iterate through the Stacks.
@@ -69,21 +71,21 @@ public interface StackADT<E> {
      * @param that the stack to compare with 
      * @return true if this Queue and the compared Stack are the same. Returns false otherwise.
      */
-    boolean equals(StackADT<E> that);
+    public boolean equals( StackADT<E> that );
 
     /**
      * This function will return true if the Stack is empty. If not, it returns false.
      * 
      * @return - Returns true if the Stack has no values in it. False otherwise.
      */
-    boolean isEmpty();
+    public boolean isEmpty();
 
     /**
      * This function will return the number of elements currently stored in the Stack.
      * 
      * @return the number of elements in the Stack.
      */
-    int size();
+    public int size();
 
     /**
      * This will assume that the element given is not null.
@@ -94,14 +96,14 @@ public interface StackADT<E> {
      * @param element the element to search for
      * @return the position of the value in the Stack. If it doesn't exist, it returns -1.
      */
-    int search(E element);
+    public int search( E toFind );
 
     /**
      * This function will check if the size of the Stack has reached or exceeded its maximum capacity. If not, it returns false.
      * 
      * @return true if the size of the Stack has reached its maximum capacity. Returns false otherwise.
      */
-    boolean stackOverflow();
+    public boolean stackOverflow();
 
     /**
      * This will assume that the Stack has more than zero elements in it.
@@ -111,7 +113,7 @@ public interface StackADT<E> {
      * 
      * @return an Object Array containing the elements of the Stack.
      */
-    Object[] toArray();
+    public Object[] toArray();
 
     /**
      * Returns an array containing all elements in the stack in stack order.
@@ -121,12 +123,12 @@ public interface StackADT<E> {
      * @param array the array into which the stack elements are copied
      * @return an array containing the elements of the stack
      */
-    E[] toArray(E[] array);
+    public E[] toArray( E[] holder ) throws NullPointerException;
 
     /**
      * This sets up the Iterator for the Stack by passing it to the underlying data structure.
      * 
      * @return an iterator for this Stack
      */
-    Iterator<E> iterator();
+    public Iterator<E> iterator();
 }
