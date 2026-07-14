@@ -21,8 +21,6 @@ public class XMLParser {
         parse(filename);
     }
 
-
-
     private void parse(String filename) {
 
         try {
