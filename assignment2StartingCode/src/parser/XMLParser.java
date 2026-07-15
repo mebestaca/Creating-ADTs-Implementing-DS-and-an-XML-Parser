@@ -8,7 +8,7 @@ import implementations.MyQueue;
 import implementations.MyStack;
 
 /**
- * @author Marc Edison Estaca, Robert Macklin
+ * @author Marc Edison Estaca, Robert Macklin, Reiner Justin Realica
  * 
  * This class is the main XMLParser. It takes in a file name and then parses through it to ensure that the file's tags are formatted correctly.
  */
