@@ -126,10 +126,6 @@ public interface StackADT<E> {
      * 
      * @return an iterator for this Stack
      */
-<<<<<<< HEAD
-    public Iterator<E> iterator();
+	public Iterator<E> iterator();
 }
-=======
-    Iterator<E> iterator();
-}
->>>>>>> 655eb831ecfa2877f0f42520ef564e70449511ee
+
