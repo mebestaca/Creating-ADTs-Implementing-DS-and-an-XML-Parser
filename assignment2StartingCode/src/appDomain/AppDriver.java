@@ -3,7 +3,7 @@ package appDomain;
 import parser.XMLParser;
 
 /**
- * @author Marc Edison Estaca, Robert Macklin
+ * @author Marc Edison Estaca, Robert Macklin, Reiner Justin Realica
  * 
  * This class in the main driver of the program. It takes in the file name from the provided arguments and passes it to the XMLParser.
  * 
