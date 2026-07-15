@@ -1,7 +1,7 @@
 package implementations;
 
 /**
- *  @author Reiner Justin Realica, Robert Macklin
+ *  @author Marc Edison Estaca, Robert Macklin, Reiner Justin Realica
  *  
  *  This is the class for a Doubly Linked List node used by the MyDLL.
  * 
