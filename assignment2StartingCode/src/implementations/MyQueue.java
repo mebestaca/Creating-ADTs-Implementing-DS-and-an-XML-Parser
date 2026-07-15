@@ -5,7 +5,7 @@ import utilities.QueueADT;
 import exceptions.EmptyQueueException;
 
 /**
- * @author Reiner Justin Realica, Robert Macklin
+ * @author Marc Edison Estaca, Robert Macklin, Reiner Justin Realica
  * 
  * This Class is a implementation of the QueueADT interface.
  * 
