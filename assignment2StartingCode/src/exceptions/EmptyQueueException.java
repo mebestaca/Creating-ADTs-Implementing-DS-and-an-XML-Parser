@@ -10,14 +10,14 @@ package exceptions;
 public class EmptyQueueException extends RuntimeException {
 	
 	/**
-	 * 
+	 * Constructor of the exception class.
 	 */
 	public EmptyQueueException() {
 		super();
 	}
 	
 	/**
-	 * @param message
+	 * @param message Passes the error to the generic exception class.
 	 */
 	public EmptyQueueException(String message) {
 		super(message);
