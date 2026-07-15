@@ -1,7 +1,7 @@
 package exceptions;
 
 /**
- * @author Reiner Justin Realica, Robert Macklin
+ * @author Marc Edison Estaca, Robert Macklin, Reiner Justin Realica
  * 
  * This is a basic exception used by the MyQueue when a function effecting a element of the queue is run while it is empty.
  * 
