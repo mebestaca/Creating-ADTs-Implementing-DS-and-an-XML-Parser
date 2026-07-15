@@ -6,7 +6,7 @@ import utilities.Iterator;
 import utilities.ListADT;
 
 /**
- * @author Reiner Justin Realica, Robert Macklin
+ * @author Marc Edison Estaca, Robert Macklin, Reiner Justin Realica
  * 
  * This Class is a implementation of a Doubly Linked List.
  * 
